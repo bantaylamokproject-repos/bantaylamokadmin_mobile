@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white70),
       ),
       home: const OpeningScreen(),
-      routes: {
-        '/home': (context) => const MyHomePage(title: 'Bantay Lamok'),
-      },
+      routes: {'/home': (context) => const MyHomePage(title: 'Bantay Lamok')},
     );
   }
 }
@@ -66,17 +64,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         toolbarHeight: 100,
         leadingWidth: 12,
-        leading: Padding(padding: const EdgeInsets.only(left: 20), 
-        ),
+        leading: Padding(padding: const EdgeInsets.only(left: 20)),
         backgroundColor: const Color.fromARGB(255, 7, 39, 87),
         title: Row(
           children: [
-            ClipOval(
+            Container(
+              padding: const EdgeInsets.all(12.5),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(125),
+              ),
               child: Image.asset(
                 'assets/LogoNotPNG.jpg',
-                height: 50,
-                width: 50,
-                fit: BoxFit.contain,
+                height: 40,
+                width: 40,
+
+                fit: BoxFit.fill,
               ),
             ),
           ],
@@ -92,9 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: Colors.redAccent,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.headlineMedium?.copyWith(color: Colors.redAccent),
             ),
           ],
         ),
