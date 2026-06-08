@@ -11,9 +11,9 @@ class _OpeningScreenState extends State<OpeningScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacementNamed('/login');
     });
   }
 
@@ -21,9 +21,7 @@ class _OpeningScreenState extends State<OpeningScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 3, 36, 63),
-      body: Center(
-        child: Image.asset('assets/BantayLamok.png', height:250),
-      ),
+      body: Center(child: Image.asset('assets/BantayLamok.png', height: 250)),
     );
   }
 }

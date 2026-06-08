@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'register.dart';
 import 'colors.dart';
-import 'home.dart';
+import 'login.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   bool _rememberMe = false;
   bool _obscurePassword = true;
 
@@ -185,7 +184,7 @@ class _LogInScreenState extends State<LogInScreen> {
                               children: [
                                 // Sign in label
                                 const Text(
-                                  'SIGN IN TO CONTINUE',
+                                  'SIGN UP',
                                   style: TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.w700,
@@ -206,6 +205,11 @@ class _LogInScreenState extends State<LogInScreen> {
 
                                 // Password field
                                 _buildFieldLabel('PASSWORD'),
+                                const SizedBox(height: 8),
+                                _buildPasswordField(),
+                                const SizedBox(height: 16),
+
+                                _buildFieldLabel('CONFIRM PASSWORD'),
                                 const SizedBox(height: 8),
                                 _buildPasswordField(),
                                 const SizedBox(height: 16),
@@ -263,7 +267,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                 ),
                                 const SizedBox(height: 26),
 
-                                // LOG IN button
+                                // REGISTER button
                                 Container(
                                   width: double.infinity,
                                   height: 52,
@@ -294,13 +298,13 @@ class _LogInScreenState extends State<LogInScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const HomeScreen(),
+                                                const LogInScreen(),
                                           ),
                                         );
                                       },
                                       child: const Center(
                                         child: Text(
-                                          'LOG IN',
+                                          'REGISTER',
                                           style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w800,
@@ -379,7 +383,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Don't have an account? ",
+                                      "Already have an account? ",
                                       style: TextStyle(
                                         fontSize: 13.5,
                                         color: AppColors.textMuted.withOpacity(
@@ -393,12 +397,12 @@ class _LogInScreenState extends State<LogInScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const RegisterScreen(),
+                                                const LogInScreen(),
                                           ),
                                         );
                                       },
                                       child: Text(
-                                        'Register',
+                                        'Login',
                                         style: TextStyle(
                                           fontSize: 13.5,
                                           fontWeight: FontWeight.w700,
